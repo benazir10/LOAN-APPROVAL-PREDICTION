@@ -77,3 +77,11 @@ print("Model Accuracy: ",accuracy_score(test_y,pred))
 print(confusion_matrix(test_y,pred))
 print(classification_report(test_y,pred))
 
+from sklearn.model_selection import train_test_split
+
+# Splitting the dataset into features (X) and target variable (y)
+X = data.drop(columns=['loan_status'])  # Features
+y = data['loan_status']  # Target variable
+
+# Splitting the dataset into training and testing sets with an 80:20 ratio
+train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.2, random_state=0)
