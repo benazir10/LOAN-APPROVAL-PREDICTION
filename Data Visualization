@@ -1,0 +1,25 @@
+
+# Print the count of each category in the 'Gender' column and create a count plot to visualize the distribution
+import seaborn as sns
+print(data['Gender'].value_counts())
+sns.countplot(x='Gender',data=data,palette='Set1')
+
+# Create a box plot for the 'income_annum' column to visualize its distribution
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.boxplot(x=data['income_annum'])
+plt.show()
+  
+# Print the count of each category in the 'no_of_dependents' column and create a count plot to visualize the distribution
+print("Number of dependents")
+print(data['no_of_dependents'].value_counts())
+sns.countplot(x='no_of_dependents', data=data,palette='Set1')
+  
+
+# Print the count of each category in the 'self_employed' column and create a count plot to visualize the distribution
+print(data['self_employed'].value_counts())
+sns.countplot(x='self_employed', data=data,palette='Set1')
+
+
+
+
