@@ -39,3 +39,12 @@ rf_pipeline = Pipeline([
 
 rf_scores = cross_val_score(rf_pipeline, train_X, train_y, cv=5)
 print('Random Forest: The accuracy of classification is %.2f%%' % (rf_scores.mean() * 100))
+
+# Logistic Regression
+logistic_pipeline = Pipeline([
+    ('preprocessor', preprocessor),
+    ('classifier', LogisticRegression())
+])
+
+logistic_scores = cross_val_score(logistic_pipeline, train_X, train_y, cv=5)
+print('Logistic Regression: The accuracy of classification is %.2f%%' % (logistic_scores.mean() * 100))
