@@ -18,3 +18,24 @@ from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import GradientBoostingClassifier
+
+# Categorical and numerical columns
+categorical_columns = ['education', 'self_employed', 'marital_status', 'Gender']
+numerical_columns = ['no_of_dependents', 'income_annum', 'loan_amount', 'loan_term',
+                     'cibil_score', 'residential_assets_value', 'bank_asset_value']
+
+# Preprocessing pipeline
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('cat', OneHotEncoder(), categorical_columns)
+    ],
+    remainder='passthrough'
+)
+# Random Forest
+rf_pipeline = Pipeline([
+    ('preprocessor', preprocessor),
+    ('classifier', RandomForestClassifier())
+])
+
+rf_scores = cross_val_score(rf_pipeline, train_X, train_y, cv=5)
+print('Random Forest: The accuracy of classification is %.2f%%' % (rf_scores.mean() * 100))
