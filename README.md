@@ -15,31 +15,31 @@ The dataset contains information about Loan Applicants.
 
 This dataset attributes:
 
-loan_id
+--loan_id
 
-no_of_dependents
+--no_of_dependents
 
-education
+--education
 
-self_employed
+--self_employed
 
-income_annum
+--income_annum
 
-loan_amount
+--loan_amount
 
-loan_term
+--loan_term
 
-cibil_score
+--cibil_score
 
-Credit_History
+--Credit_History
 
-marital_status
+--marital_status
 
-Gender
+--Gender
 
-bank_asset_value
+--bank_asset_value
 
-loan_status
+--loan_status
 
 To load the training data in your colab, use the below command:
 
