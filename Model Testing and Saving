@@ -1,1 +1,17 @@
+#Printing Predictions
+print(pred)
 
+#Subsetting Test Data 
+X_test=data.iloc[2987:,]
+
+#Counting Values of loan_status in Test Data
+X_test.head()
+
+#Making Predictions on Test Data
+X_test['loan_status'].value_counts()
+prediction = GB.predict(X_test)
+print(prediction)
+
+#Printing Predictions on Sample Data 
+t=GB.predict([[0, 0, 0, 1, 0, 1811, 1666, 54, 360, 1, 2, 1,]])
+print(t)
