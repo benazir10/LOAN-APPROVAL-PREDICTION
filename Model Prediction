@@ -56,3 +56,13 @@ knn_pipeline = Pipeline([
 ])
 knn_scores = cross_val_score(knn_pipeline, train_X, train_y, cv=5)
 print('KNN: The accuracy of classification is %.2f%%' % (knn_scores.mean() * 100))
+
+# Gradient Boosting Classifier2
+gb_pipeline = Pipeline([
+    ('preprocessor', preprocessor),
+    ('classifier', GradientBoostingClassifier())
+])
+
+gb_scores = cross_val_score(gb_pipeline, train_X, train_y, cv=5)
+print('Gradient Boosting Classifier: The accuracy of classification is %.2f%%' % (gb_scores.mean() * 100))
+
