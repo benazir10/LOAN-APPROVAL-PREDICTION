@@ -66,3 +66,14 @@ gb_pipeline = Pipeline([
 gb_scores = cross_val_score(gb_pipeline, train_X, train_y, cv=5)
 print('Gradient Boosting Classifier: The accuracy of classification is %.2f%%' % (gb_scores.mean() * 100))
 
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+
+GB=GradientBoostingClassifier()
+GB.fit(train_X,train_y)
+pred=GB.predict(test_X)
+print("Model Accuracy: ",accuracy_score(test_y,pred))
+print(confusion_matrix(test_y,pred))
+print(classification_report(test_y,pred))
+
