@@ -1,0 +1,46 @@
+#Importing Modules
+import pandas as pd
+import numpy as np
+
+# Read the CSV file into a pandas DataFrame
+data = pd.read_csv("/content/drive/MyDrive/content/Loan_Prediction_Dataset.csv")
+
+# Display the first few rows of the DataFrame
+data.head()
+
+# Display the last few rows of the DataFrame
+data.tail()
+
+# Generate descriptive statistics of the DataFrame
+data.describe()
+
+#Checking Coloumns
+data.columns
+
+# Check for missing values in the DataFrame and sum them up
+data.isnull().sum()
+
+# Get the shape of the DataFrame (number of rows and columns)
+data.shape
+
+# Calculate the sum, mean, and median of the 'loan_amount' column
+sum_df=data["loan_amount"].sum()
+mean_df=data["loan_amount"].mean()
+median_df=data["loan_amount"].median()
+print("Sum:",sum_df,"\nMean:",mean_df,"\nMedian:",median_df)
+
+# Find the minimum and maximum values in the 'loan_amount' column
+min_df=data["loan_amount"].min()
+max_df=data["loan_amount"].max()
+print("Minimum:",min_df,"\nMaximum:",max_df)
+
+# Count the number of male and female applicants, as well as null values in the 'Gender' column
+countMale = len(data[data.Gender == 'Male'])
+countFemale = len(data[data.Gender == 'Female'])
+countNull = len(data[data.Gender.isnull()])
+print("Percentage of Male applicants: {:.2f}%".format((countMale / len(data.Gender))*100))
+print("Percentage of Female applicants: {:.2f}%".format((countFemale / len(data.Gender))*100))
+
+
+
+
