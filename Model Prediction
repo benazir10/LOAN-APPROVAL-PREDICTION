@@ -48,3 +48,11 @@ logistic_pipeline = Pipeline([
 
 logistic_scores = cross_val_score(logistic_pipeline, train_X, train_y, cv=5)
 print('Logistic Regression: The accuracy of classification is %.2f%%' % (logistic_scores.mean() * 100))
+
+# K-Nearest Neighbors (KNN)
+knn_pipeline = Pipeline([
+    ('preprocessor', preprocessor),
+    ('classifier', KNeighborsClassifier())
+])
+knn_scores = cross_val_score(knn_pipeline, train_X, train_y, cv=5)
+print('KNN: The accuracy of classification is %.2f%%' % (knn_scores.mean() * 100))
