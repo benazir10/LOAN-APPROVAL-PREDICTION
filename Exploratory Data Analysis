@@ -41,6 +41,28 @@ countNull = len(data[data.Gender.isnull()])
 print("Percentage of Male applicants: {:.2f}%".format((countMale / len(data.Gender))*100))
 print("Percentage of Female applicants: {:.2f}%".format((countFemale / len(data.Gender))*100))
 
+COVERTING THE CATEGORICAL VALUES INTO NUMERICAL VALUES
+
+## Convert categorical values in the 'Gender' column to numerical values and display the count of each.
+data.Gender=data.Gender.map({'Male':1,'Female':0})
+data.Gender.value_counts()
+
+## Convert categorical values in the 'marital_status' column to numerical values and display the count of each.
+data.marital_status=data.marital_status.map({'Married':1,'Unmarried':0})
+data.marital_status.value_counts()
+
+## Convert categorical values in the 'education' column to numerical values and display the count of each.
+data.education=data.education.map({'Graduate':1,'Not Graduate':0})
+data.education.value_counts()
+
+### Convert categorical values in the 'self_employed' column to numerical values and display the count of each.
+data.self_employed=data.self_employed.map({'Yes':1,'No':0})
+data.self_employed.value_counts()
+
+### Convert categorical values in the 'loan_status ' column to numerical values and display the count of each.
+data.loan_status = data.loan_status.map({'Approved': 1, 'Rejected': 0}).fillna(-1)
+data.loan_status.value_counts()
+
 
 
 
